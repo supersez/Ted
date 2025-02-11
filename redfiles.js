@@ -4,10 +4,12 @@ const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
-     { file: "PARTY_MASHUP_2023.mp3", details: "Year End Party Mix 2023 / VDj Royal Muz 71" },
+{ file: "Shaukan.mp3", details: "🎙️ Jubin Nautiyal, Neha Kakkar / (July 23, 2024) / 💽 Shaukan / 🎼 Shashwat Sachdev / 🗄️ Punjabi-Singles / 🌠 Janhvi Kapoor" },
+{ file: "Lover.mp3", details: "🎙️ Diljit Dosanjh / (21 Aug 2021) / 📝 Raj Ranjodh / 💽 Lover / 🎼 Intense / 🗄️ Punjabi-Singles / 🏷️ Diljit Dosanjh Music" },
+{ file: "PARTY_MASHUP_2023.mp3", details: "Year End Party Mix 2023 / VDj Royal Muz 71" },
 { file: "South & Bollywood Tapori Mashup.mp3", details: "2023 / DJ Bhav Lond" },
 { file: "Stromae Alors On Danse.mp3", details: "🎙️ Stromae / 🎼 Stromae, Dimitri Borrey / 📝 Paul Van Haver / 📅 September 26, 2009 / 📺 Directed by Paul Van Haver & Jérome Guiot" },
-     { file: "Conkarah Banana.mp3", details: "🎧 (feat. Shaggy) /  💿DJ FLe - Minisiren Remix" },
+{ file: "Conkarah Banana.mp3", details: "🎧 (feat. Shaggy) /  💿DJ FLe - Minisiren Remix" },
 { file: "Guli Mata.mp3", details: "🎙️ Saad Lamjarred, Shreya Ghoshal / 🎼 Mehdi Mozayine (Arabic part), Rajat Nagpal (Hindi part) / 📝 Mohamed El Maghribi, Rana Sotal / 📅 December 17, 2023 / 📺 Featuring Jennifer Winget" },
 { file: "Saj Ke Sawar Ke.mp3", details: "🎬 Muqaddar (1996) / 🎙️ Khesari Lal Yadav, Priyanka Singh / 🎼 Madhukar Anand / 📝 Azad Singh" },
 { file: "Gimme More.mp3", details: "💿by Britney Spears" },
