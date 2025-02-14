@@ -4,6 +4,10 @@ const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
+{ file: "Jain Makeba.mp3", details: "💽 Zanaka (2015) / 🎙️ Jain / 🎼 Maxim Nucci / 📝 Jain" },
+{ file: "Makeba Discotheque mix.mp3", details: "🌐 can visit thehouseofdisco dot com / jain makeba discotheque fantastique remix" },
+{ file: "Bebot.mp3", details: "💽 Monkey Business (2005) / 🎙️ apl.de.ap / 🎼 will.i.am / 📝 will.i.am, apl.de.ap Directed by Patricio Ginelsa / Produced by Kid Heroes Productions" },
+{ file: "My Humps (Dirty).mp3", details: "💽 Monkey Business (2005) / 🎙️ Fergie, will.i.am / 🎼 will.i.am / 📝 will.i.am, David Payton" },
 { file: "Do It.mp3", details: "💽  (2019) / 🎙️ Ilkay Sencan / 🎼 Turkish DJ Ilkay Sencan / 📝 Ilkay Sencan" },
 { file: "Fireball.mp3", details: "💽 Globalization (2014) / 🎙️ John Ryan / 🎼 Pitbull / 📝 Armando C. Perez (Pitbull), John Ryan, Joe Spargur, Tom Peyton, Ilsey Juber" },
 { file: "Im An Albatraoz.mp3", details: "💽 (2014) / 🎙️ Little Sis Nora / 🎼 Swedish DJ AronChupa / 📝 Aron Ekberg, Nora Ekberg" },
