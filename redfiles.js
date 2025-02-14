@@ -4,6 +4,10 @@ const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
+{ file: "Do It.mp3", details: "💽  (2019) / 🎙️ Ilkay Sencan / 🎼 Turkish DJ Ilkay Sencan / 📝 Ilkay Sencan" },
+{ file: "Fireball.mp3", details: "💽 Globalization (2014) / 🎙️ John Ryan / 🎼 Pitbull / 📝 Armando C. Perez (Pitbull), John Ryan, Joe Spargur, Tom Peyton, Ilsey Juber" },
+{ file: "Im An Albatraoz.mp3", details: "💽 (2014) / 🎙️ Little Sis Nora / 🎼 Swedish DJ AronChupa / 📝 Aron Ekberg, Nora Ekberg" },
+{ file: "Yalla Inna.mp3", details: "💽 (2015) / 🎙️ Inna / 🎼 Play & Win / 📝 Marcel Botezan, Sebastian Barac, Nadir Tamuz Augustin, Inna" },
 { file: "Shaukan.mp3", details: "🎙️ Jubin Nautiyal, Neha Kakkar / (July 23, 2024) / 💽 Shaukan / 🎼 Shashwat Sachdev / 🗄️ Punjabi-Singles / 🌠 Janhvi Kapoor" },
 { file: "Lover.mp3", details: "🎙️ Diljit Dosanjh / (21 Aug 2021) / 📝 Raj Ranjodh / 💽 Lover / 🎼 Intense / 🗄️ Punjabi-Singles / 🏷️ Diljit Dosanjh Music" },
 { file: "PARTY_MASHUP_2023.mp3", details: "Year End Party Mix 2023 / VDj Royal Muz 71" },
