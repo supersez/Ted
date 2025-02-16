@@ -4,6 +4,13 @@ const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
+{ file: "Boht Hard.mp3", details: "💽 (2018) / 🎙️ Emiway Bantai featuring Thoratt / 🎼 Tony James / 📝 Emiway Bantai" },
+{ file: "Exotic ft.mp3", details: "💽 (2013) / 🎙️ Priyanka Chopra featuring Pitbull / 🎼 RedOne / 📝 Priyanka Chopra, Pitbull, RedOne" },
+{ file: "Follow The Leader.mp3", details: "💽 Líderes (2012) / 🎙️ Wisin & Yandel featuring Jennifer Lopez / 🎼 Jonas Saeed, Niclas Kings / 📝 Wisin & Yandel, Jennifer Lopez, Nyanda Thorbourne, Nailah Thorbourne, Tasha Thorbourne, Candace Thorbourne" },
+{ file: "I Know You Want Me.mp3", details: "💽 Pitbull Starring in Rebelution (2009) / 🎙️ Pitbull / 🎼 Nicola Fasano, Pat-Rich, Armando Pérez, Edward Bello, Daniel Seraphine, David Wolinski / 📝 Armando Pérez, Edward Bello, Daniel Seraphine, David Wolinski, Nicola Fasano, Patrick Gonella, Stefano Bosco" },
+{ file: "Pho 2 Pht Hn KAIZ Remix.mp3", details: "💽 (2020) / 🎙️ Pháo / 🎼 KAIZ / 📝 Nguyễn Diệu Huyền" },
+{ file: "Chamillionaire, Hip Hop Police.mp3", details: "💿 Ultimate Victory (2007) / 🎙️ Chamillionaire featuring Slick Rick / 🎼 J.R. Rotem / 📝 Hakeem Seriki (Chamillionaire), Richard Walters (Slick Rick)" },
+{ file: "SKIZZO SKILLZ feat BINIDITAT.mp3", details: "💿 (2012) / 🎙️ Skizzo Skillz featuring Karie" },
 { file: "Jain Makeba.mp3", details: "💽 Zanaka (2015) / 🎙️ Jain / 🎼 Maxim Nucci / 📝 Jain" },
 { file: "Makeba Discotheque mix.mp3", details: "🌐 can visit thehouseofdisco dot com / jain makeba discotheque fantastique remix" },
 { file: "Bebot.mp3", details: "💽 Monkey Business (2005) / 🎙️ apl.de.ap / 🎼 will.i.am / 📝 will.i.am, apl.de.ap Directed by Patricio Ginelsa / Produced by Kid Heroes Productions" },
