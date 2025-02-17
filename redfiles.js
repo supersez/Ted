@@ -4,6 +4,9 @@ const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
+{ file: "Aidan Na Nach.mp3", details: "💽 (2023) / 🎙️ Amar Jalal / 🎼 Kaptaan / 📝 Kaptaan / 🎥 Piyush Bhagat, Shazia Samji / 💼 Anshul Garg" },
+{ file: "Aloo Chaat RnB.mp3", details: "🎬 Aloo Chaat (2009) / 🎙️ RDB featuring Nindy Kaur and Smooth / 🎼 RDB / 📝 RDB" },
+{ file: "Bhool Bhulaiyaa 3.mp3", details: "🎬 Bhool Bhulaiyaa 3 (2022) / 🎙️ Neeraj Shridhar, Shalmali Kholgade / 🎼 Pritam" },
 { file: "Boht Hard.mp3", details: "💽 (2018) / 🎙️ Emiway Bantai featuring Thoratt / 🎼 Tony James / 📝 Emiway Bantai" },
 { file: "Exotic ft.mp3", details: "💽 (2013) / 🎙️ Priyanka Chopra featuring Pitbull / 🎼 RedOne / 📝 Priyanka Chopra, Pitbull, RedOne" },
 { file: "Follow The Leader.mp3", details: "💽 Líderes (2012) / 🎙️ Wisin & Yandel featuring Jennifer Lopez / 🎼 Jonas Saeed, Niclas Kings / 📝 Wisin & Yandel, Jennifer Lopez, Nyanda Thorbourne, Nailah Thorbourne, Tasha Thorbourne, Candace Thorbourne" },
