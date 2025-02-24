@@ -4,6 +4,8 @@ const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
+{ file: "DJ Devil - Taati.mp3", details: "📀 Taati (2020) / 🎙️ DJ Devil / 🎼 DJ Devil / 🏷️ Sony Music India" },
+{ file: "Kya Baat Ay.mp3", details: "📀 Kya Baat Ay (2018) / 🎙️ Harrdy Sandhu / 🎼 B Praak / 📝 Jaani / 🎥 Arvindr Khaira / 🏷️ Sony Music India" },
 { file: "Akh Lad javve.mp3", details: "🎬 Loveyatri (2018) / 🎙️ Badshah, Asees Kaur, Jubin Nautiyal / 🎼 Tanishk Bagchi / 📝 Tanishk Bagchi, Badshah / 🎥 Abhiraj Minawala" },
 { file: "Hasan Shah Hawa.mp3", details: "📀 Hawa (2021) / 🎙️ Hasan Shah / 🎼 Hasan Shah / 📝 Hasan Shah, Ramses / 🎥 Not specified" },
 { file: "High Hukku.mp3", details: "📀 High Hukku (2023) / 🎙️ King, Nikhita Gandhi / 🎼 King / 📝 King / 🎥 Punit J Pathak" },
