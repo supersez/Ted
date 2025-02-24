@@ -8,7 +8,7 @@ const repositories = [
 { file: "Hasan Shah Hawa.mp3", details: "📀 Hawa (2021) / 🎙️ Hasan Shah / 🎼 Hasan Shah / 📝 Hasan Shah, Ramses / 🎥 Not specified" },
 { file: "High Hukku.mp3", details: "📀 High Hukku (2023) / 🎙️ King, Nikhita Gandhi / 🎼 King / 📝 King / 🎥 Punit J Pathak" },
 { file: "Karabuu.mp3", details: "🎬 Pogaru (2021) / 🎙️ Chandan Shetty / 🎼 Chandan Shetty / 📝 Chandan Shetty / 🎥 Nanda Kishore" },
-{ file: "Oo Bolega Remix.mp3", details: "Got it, Vinoth! I'll include the label name whenever possible in future song details. Here's the updated format for your song request:  🎬 Pushpa: The Rise (2021) / 🎙️ Kanika Kapoor / 🎼 Devi Sri Prasad, DJ Tarunn / 📝 Chandrabose / 🎥 Sukumar / 🏷️ T-Series" },
+{ file: "Oo Bolega Remix.mp3", details: "🎬 Pushpa: The Rise (2021) / 🎙️ Kanika Kapoor / 🎼 Devi Sri Prasad, DJ Tarunn / 📝 Chandrabose / 🎥 Sukumar / 🏷️ T-Series" },
 { file: "Tauba Tauba.mp3", details: "🎬 Bad Newz (2023) / 🎙️ Karan Aujla / 🎼 Karan Aujla / 📝 Karan Aujla" },
 { file: "Ding Dang karthage.mp3", details: "🎬 Munna Michael (2017) / 🎙️ Amit Mishra, Antara Mitra / 🎼 Javed–Mohsin / 📝 Danish Sabri, Sabbir Khan / 🎥 Sabbir Khan" },
 { file: "Firse Machayenge.mp3", details: "📀 Firse Machayenge (2019) / 🎙️ Emiway Bantai / 🎼 Tony James / 📝 Emiway Bantai / 🎥 Rayhaan Patni" },
