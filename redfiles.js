@@ -1,9 +1,12 @@
-    
+   
 // Configuration: Add/remove repos here easily
 const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
+{ file: "Gasolina.mp3", details: "📀 Barrio Fino (2004) / 🎙️ Daddy Yankee, Glory / 🎼 Luny Tunes / 📝 Daddy Yankee, Eddie Dee" },
+{ file: "Impacto (Remix).mp3", details: "📀 El Cartel: The Big Boss (2007) / 🎙️ Daddy Yankee, Fergie / 🎼 Scott Storch, Tainy / 📝 Daddy Yankee, Fergie, William Adams" },
+{ file: "Rakhi Rakhi.mp3", details: "🎬 Rakhi (2006) / 🎙️ Devi Sri Prasad, Mamta Mohandas / 🎼 Devi Sri Prasad / 📝 Sirivennela Seetharama Sastry / 🎥 Krishna Vamsi" },
 { file: "Chhotte peg mar.mp3", details: "🎬 Sonu Ke Titu Ki Sweety (2018) / 🎙️ Yo Yo Honey Singh, Neha Kakkar, Navraj Hans / 🎼 Yo Yo Honey Singh / 📝 Yo Yo Honey Singh / 🎥 Luv Ranjan" },
 { file: "Dil Chori.mp3", details: "🎬 Sonu Ke Titu Ki Sweety (2018) / 🎙️ Yo Yo Honey Singh, Simar Kaur, Ishers / 🎼 Yo Yo Honey Singh / 📝 Yo Yo Honey Singh, Singhsta, Oye Sheraa / 🎥 Luv Ranjan" },
 { file: "High Heels.mp3", details: "📀 High Heels (2012) / 🎙️ Jaz Dhami, Yo Yo Honey Singh / 🎼 Yo Yo Honey Singh / 📝 Alfaaz / 🏷️ Sanchez Productions Ltd" },
@@ -70,4 +73,4 @@ export const allSongs = repositories.flatMap(repo =>
     ...song,
     path: `${repo.url}${song.file}`.replace(/ /g, '%20') // Encode spaces
   }))
-);
+); 
