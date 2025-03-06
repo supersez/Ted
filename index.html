@@ -1,4 +1,4 @@
-          
+           
    <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -812,6 +812,43 @@
     transform-origin: 52px 24px;
 }
     
+/* Flash message styles */
+.flash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 50%, 
+        transparent 0px, 
+        rgba(255, 255, 255, 0.85) 4px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(-1px);
+    cursor: pointer;
+}
+
+.flash-message {
+    background: rgba(255, 240, 240, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 300px;
+    text-align: center;
+    border: 2px solid rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1.4;
+    pointer-events: none;
+}
+
+/* Play button cutout area */
+#play-pause {
+    position: relative;
+    z-index: 10000;
+}
+    
     
         @media screen and (max-width: 768px) {
           #songList::-webkit-scrollbar-thumb {
@@ -1011,6 +1048,13 @@ body {
     </svg>
 </div>
 
+<div id="flashOverlay" class="flash-overlay">
+    <div class="flash-message">
+        ⚠️ Before you start listening, use headphones for the best experience. 
+        Some songs may be suitable only for adults aged 18 and above.<br><br>
+        🔞 Songs may contain inappropriate words and should not be played loudly in public places
+    </div>
+</div>
 
       <audio id="audioPlayer">
         Your browser does not support the audio element.
@@ -1820,6 +1864,36 @@ document.querySelectorAll('.link-item').forEach(link => {
     setTimeout(() => {
         this.classList.remove('active');
     }, 1000);
+});
+    
+    // Flash message handling
+const flashOverlay = document.getElementById('flashOverlay');
+const playPauseBtn = document.getElementById('play-pause');
+
+// Show overlay on first visit
+if (!localStorage.getItem('messageDismissed')) {
+    flashOverlay.style.display = 'flex';
+}
+
+// Hide overlay on click
+flashOverlay.addEventListener('click', (e) => {
+    // Check if click is outside the play button area
+    const playRect = playPauseBtn.getBoundingClientRect();
+    const radius = Math.max(playRect.width, playRect.height) / 2;
+    const centerX = playRect.left + playRect.width/2;
+    const centerY = playRect.top + playRect.height/2;
+    const distance = Math.sqrt((e.clientX - centerX)**2 + (e.clientY - centerY)**2);
+    
+    if (distance > radius) {
+        flashOverlay.style.display = 'none';
+        localStorage.setItem('messageDismissed', 'true');
+    }
+});
+
+// Hide overlay when play is clicked
+document.getElementById('play-pause').addEventListener('click', () => {
+    flashOverlay.style.display = 'none';
+    localStorage.setItem('messageDismissed', 'true');
 });
     
     </script>
