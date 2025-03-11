@@ -1,4 +1,4 @@
-            
+             
    <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -905,6 +905,30 @@
     z-index: 10000;
 }
     
+    /* Add to your CSS */
+.version-link {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 0.8em;
+    font-family: 'Roboto Mono', monospace;
+    text-decoration: none;
+    color: #555;
+    background: rgba(200, 200, 200, 0.2);
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 100;
+    backdrop-filter: blur(2px);
+}
+
+.version-link:hover {
+    background: rgba(200, 200, 200, 0.4);
+    color: #007bff;
+    text-decoration: underline;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
     
         @media screen and (max-width: 768px) {
           #songList::-webkit-scrollbar-thumb {
@@ -1024,7 +1048,9 @@ body {
   </ul>
 </div>
     <div class="vertical-line"></div>
-    <!-- A-container for Play/Pause toggle -->
+    <a href="catalog.html" class="version-link" target="_blank" rel="noopener noreferrer">
+        VERSION 6.2
+    </a>
 
    <div class="a-container">
        <div class="icon-row">
