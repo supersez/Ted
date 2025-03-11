@@ -3,6 +3,8 @@ const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
+{ file: "Claydee feat Dame Dame.mp3", details: "📀 Dame Dame (2017) / 🎙️ Claydee, Lexy Panterra / 🎼 Claydee, Tim Aeby / 📝 Claydee, Andrea Sandoval, Sebastian Guerrero, Mauricio Alfredo Guerrero Jr., Sammy Plotkin, KAS Music / 🎥 Claydee / 🏷️ Down2Earth Music" },
+{ file: "Eva Simons ft policeman.mp3", details: "📀 Policeman (2015) / 🎙️ Eva Simons, Konshens / 🎼 Sidney Samson / 📝 Eva Simons, Sidney Samson / 🎥 Rigel Kilston / 🏷️ Powerhouse" },
 { file: "Thirumbi parra.mp3", details: "💿 Unknown (2010) / 🎙️ not available" },
 { file: "Thoothukudi kothanar.mp3", details: "💿 Unknown (2025) /🎙️not available /  🎶 ne oru aruvi" },
 { file: "Gasolina.mp3", details: "📀 Barrio Fino (2004) / 🎙️ Daddy Yankee, Glory / 🎼 Luny Tunes / 📝 Daddy Yankee, Eddie Dee" },
