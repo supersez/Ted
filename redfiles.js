@@ -1,8 +1,10 @@
-   // Configuration: Add/remove repos here easily
+    // Configuration: Add/remove repos here easily
 const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
+{ file: "NASTY! (SLOWED).mp3", details: "📀 NASTY! (SLOWED) (2025) / 🎙️ IMPXSTR, Paul Leger / 🎼 Paul Leger / 📝 Paul Leger / 🏷️ Black 17 Media, LLC." },
+{ file: "NASTY!.mp3", details: "📀 NASTY! (2025) / 🎙️ IMPXSTR, Paul Leger / 🎼 Paul Leger / 📝 Paul Leger / 🏷️ Black 17 Media, LLC." },
 { file: "50 Cent - Candy Shop.mp3", details: "📀 Candy Shop (2005) / 🎙️ 50 Cent featuring Olivia / 🎼 Scott Storch / 📝 Curtis Jackson, Scott Storch / 🎥 Jessy Terrero / 🏷️ Interscope, Aftermath, Shady, G-Unit" },
 { file: "50 Cent - In Da Club.mp3", details: "📀 In da Club (2003) / 🎙️ 50 Cent / 🎼 Dr. Dre, Mike Elizondo / 📝 50 Cent, Dr. Dre, Mike Elizondo / 🎥 Philip Atwell / 🏷️ Shady, Aftermath, Interscope" },
 { file: "Andreea D - Rompedon.mp3", details: "📀 Rompedon (2014) / 🎙️ Andreea D / 🎼 Silviu Păduraru, Victor Alstani / 📝 Emanuela Oancea, Mike Wells / 🎥 Alex Ceaușu / 🏷️ Roton Music" },
@@ -79,4 +81,4 @@ export const allSongs = repositories.flatMap(repo =>
     ...song,
     path: `${repo.url}${song.file}`.replace(/ /g, '%20') // Encode spaces
   }))
-); 
+);
