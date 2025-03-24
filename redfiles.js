@@ -3,8 +3,8 @@ const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
-{ file: "SCHWESTA EWA - 60 PUNCHBARS.mp3", details: "📀 Schwesta Ewa - 60 Punchbars (2012) / 🎙️ Schwesta Ewa / 🎼 EPMD ("Da Joint" sample) / 📝 Schwesta Ewa / 🎥 Henning "Imun" Brix" },
-{ file: "XATAR - Mehr Eier ( Remix).mp3", details: "📀 Schwesta Ewa ft. XATAR - Mehr Eier (Dj Cashesclay & Dj Mastablaze Remix) (2023) / 🎬 Henning Brix, Xatar / 🎥 Henning "Imun" Brix / 🎭 Thorsten Spivak / 🎟️ Nils Schlonsok / 🚁 Joellfpv" },
+{ file: "SCHWESTA EWA - 60 PUNCHBARS.mp3", details: "📀 Schwesta Ewa - 60 Punchbars (2012) / 🎙️ Schwesta Ewa / 🎼 EPMD (Da Joint sample) / 📝 Schwesta Ewa / 🎥 Henning Imun Brix" },
+{ file: "XATAR - Mehr Eier ( Remix).mp3", details: "📀 Schwesta Ewa ft. XATAR - Mehr Eier (Dj Cashesclay & Dj Mastablaze Remix) (2023) / 🎬 Henning Brix, Xatar / 🎥 Henning Imun Brix / 🎭 Thorsten Spivak / 🎟️ Nils Schlonsok / 🚁 Joellfpv" },
 { file: "Schwesta Ewa ft DrDre Remix.mp3", details: "💿 (2025*) / 🎤Schwesta Ewa ft. Dr.Dre - Adventskalender  🎼( Dj Cashesclay Remix )" },
 { file: "NASTY! (SLOWED).mp3", details: "📀 NASTY! (SLOWED) (2025) / 🎙️ IMPXSTR, Paul Leger / 🎼 Paul Leger / 📝 Paul Leger / 🏷️ Black 17 Media, LLC." },
 { file: "NASTY!.mp3", details: "📀 NASTY! (2025) / 🎙️ IMPXSTR, Paul Leger / 🎼 Paul Leger / 📝 Paul Leger / 🏷️ Black 17 Media, LLC." },
