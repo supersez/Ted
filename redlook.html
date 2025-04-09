@@ -1,7 +1,7 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
-    <title>File Search</title>
+    <title>Text File Search</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,7 +39,7 @@
         }
 
         .suggestions {
-            position: center;
+            position: absolute;
             background-color: white;
             border: 1px solid #ddd;
             width: 70%;
@@ -90,15 +90,26 @@
             background-color: yellow;
             font-weight: bold;
         }
+       
+       .clear-cache-btn {
+            background-color: #ff4444;
+            margin-left: 10px;
+        }
+
+        .clear-cache-btn:hover {
+            background-color: #cc0000;
+        }  
+        
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>File Search</h1>
+        <h1>Text File Search</h1>
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Enter search term...">
             <div id="suggestions" class="suggestions"></div>
             <button onclick="performSearch()">Search</button>
+             <button class="clear-cache-btn" onclick="clearCacheAndReload()">Clear Cache and Reload</button>
         </div>
         <div id="results"></div>
     </div>
@@ -109,7 +120,7 @@
 
         // Load files on page load
         window.onload = async function() {
-            const files = ['redfiles.js', 'lastly'];
+            const files = ['isaiFiles.js', 'lastly', 'file3.txt'];
             
             for (const file of files) {
                 try {
@@ -212,6 +223,25 @@
                 }
             });
         }
+        
+        function clearCacheAndReload() {
+            // Clear cookies
+            document.cookie.split(';').forEach(cookie => {
+                const [name] = cookie.trim().split('=');
+                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+            });
+
+            // Clear service workers
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(registrations => {
+                    registrations.forEach(registration => registration.unregister());
+                });
+            }
+
+            // Force reload with cache busting
+            window.location.href = window.location.href + '?_=' + Date.now();
+        }
+        
     </script>
 </body>
 </html>
