@@ -3,8 +3,16 @@ const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
-{ file: "SCHWESTA EWA - 60 PUNCHBARS.mp3", details: "📀 Schwesta Ewa - 60 Punchbars (2012) / 🎙️ Schwesta Ewa / 🎼 EPMD (Da Joint sample) / 📝 Schwesta Ewa / 🎥 Henning Imun Brix" },
-{ file: "XATAR - Mehr Eier ( Remix).mp3", details: "📀 Schwesta Ewa ft. XATAR - Mehr Eier (Dj Cashesclay & Dj Mastablaze Remix) (2023) / 🎬 Henning Brix, Xatar / 🎥 Henning Imun Brix / 🎭 Thorsten Spivak / 🎟️ Nils Schlonsok / 🚁 Joellfpv" },
+{ file: "Anaconda.m4a", details: "📀 The Pinkprint (2014) / 🎙️ Nicki Minaj / 🎼 Polow da Don, Da Internz / 📝 Nicki Minaj, Ernest Clark, Marcos Palacios, Anthony Ray, Sir Mix-a-Lot / 🎥 Colin Tilley" },
+{ file: "Babys On Fire.m4a", details: "📀 Ten$Ion (2012) / 🎙️ Die Antwoord / 🎼 DJ Hi-Tek / 📝 Watkin Tudor Jones, Anri du Toit / 🎥 Terence Neale" },
+{ file: "Daddy feat Cl.m4a", details: "📀 Chiljip Psy-da (2015) / 🎙️ Psy featuring CL / 🎼 Park Jae-sang, Teddy, Yoo Gun-hyung, Future Bounce, Dominique Regiacorte, Jean-Luc Drion, will.i.am / 📝 Park Jae-sang, Teddy, Dominique Regiacorte, Jean-Luc Drion, William Adams / 🎥 Psy" },
+{ file: "Despacito.m4a", details: "📀 Despacito (2017) / 🎙️ Luis Fonsi, Daddy Yankee / 🎼 Andrés Torres, Mauricio Rengifo / 📝 Luis Fonsi, Daddy Yankee, Erika Ender / 🎥 Carlos Perez / 🏷️ Universal Music Latin" },
+{ file: "Gangnam Style.m4a", details: "📀 Gangnam Style (2012) / 🎙️ PSY / 🎼 PSY, Yoo Gun-hyung / 📝 PSY, Yoo Gun-hyung / 🎥 Cho Soo-hyun / 🏷️ YG Entertainment" },
+{ file: "Gentleman.m4a", details: "📀 Gentleman (2013) / 🎙️ PSY / 🎼 PSY, Yoo Gun-hyung / 📝 PSY, Yoo Gun-hyung / 🎥 Cho Soo-hyun / 🏷️ YG Entertainment" },
+{ file: "I Fink U Freeky.m4a", details: "📀 Ten$Ion (2012) / 🎙️ Die Antwoord / 🎼 DJ Hi-Tek / 📝 Ninja, ¥o-Landi Vi$$er / 🎥 Rob Malpage, Ninja / 🏷️ Zef Recordz, Interscope Records" },
+{ file: "Pitbull Terrier.m4a", details: "📀 Donker Mag (2014) / 🎙️ Die Antwoord / 🎼 DJ Hi-Tek / 📝 Watkin Tudor Jones, Anri du Toit / 🎥 Ninja / 🏷️ Zef Recordz" },
+{ file: "SCHWESTA EWA - 60 PUNCHBARS.mp3", details: "📀 Schwesta Ewa - 60 Punchbars (2012) / 🎙️ Schwesta Ewa / 🎼 EPMD ("Da Joint" sample) / 📝 Schwesta Ewa / 🎥 Henning "Imun" Brix" },
+{ file: "XATAR - Mehr Eier ( Remix).mp3", details: "📀 Schwesta Ewa ft. XATAR - Mehr Eier (Dj Cashesclay & Dj Mastablaze Remix) (2023) / 🎬 Henning Brix, Xatar / 🎥 Henning "Imun" Brix / 🎭 Thorsten Spivak / 🎟️ Nils Schlonsok / 🚁 Joellfpv" },
 { file: "Schwesta Ewa ft DrDre Remix.mp3", details: "💿 (2025*) / 🎤Schwesta Ewa ft. Dr.Dre - Adventskalender  🎼( Dj Cashesclay Remix )" },
 { file: "NASTY! (SLOWED).mp3", details: "📀 NASTY! (SLOWED) (2025) / 🎙️ IMPXSTR, Paul Leger / 🎼 Paul Leger / 📝 Paul Leger / 🏷️ Black 17 Media, LLC." },
 { file: "NASTY!.mp3", details: "📀 NASTY! (2025) / 🎙️ IMPXSTR, Paul Leger / 🎼 Paul Leger / 📝 Paul Leger / 🏷️ Black 17 Media, LLC." },
