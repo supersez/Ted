@@ -1,8 +1,14 @@
-    // Configuration: Add/remove repos here easily
+     // Configuration: Add/remove repos here easily
 const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
+{ file: "Chura Liya Emiway others mix.m4a", details: "📀 House of Pain (1992) / 🎙️ House of Pain / 🎼 DJ Muggs / 📝 Lawrence Muggerud, Erik Schrody / 🎥 David Perez Shadi / 🏷️ Tommy Boy Records" },
+{ file: "Drop It Low- Kat Deluna.m4a", details: "📀 Inside Out (2011) / 🎙️ Kat DeLuna / 🎼 Andras Vleminckx / 📝 Kat DeLuna, Tyrone Edmond, Andras Vleminckx / 🏷️ Universal Motown" },
+{ file: "FROM KHORASAN WITH LOVE.m4a", details: "📀 From Khorasan With Love (2025) / 🎙️ Qais Ulfat, Duran Etemadi, Aryana Sayeed, DYSTINCT, Vishal Mishra, Jacqueline F / 🎼 Produced by Umar Salman / 🎥 Fanaa TV" },
+{ file: "House of Pain - Jump Around.m4a", details: "📀 House of Pain (1992) / 🎙️ House of Pain / 🎼 DJ Muggs / 📝 Lawrence Muggerud, Erik Schrody / 🎥 David Perez Shadi / 🏷️ Tommy Boy Records" },
+{ file: "MC STAN KUSHAL others MIX.m4a", details: "📀 Old School X Boom Bap Remix (2024) / 🎙️ MC Stan, Kushal Pokhrel, DIVINE, Deep Jandu, Laika Pariyar / 🎼 19XX / 🎥 19XX Recordz" },
+{ file: "The Power Of Bhangra.m4a", details: "📀 The Power of Bhangra (2003) / 🎙️ Snap! vs. Motivo / 🎼 Snap!, Motivo" },
 { file: "On The Floor feat Pitbull.m4a", details: "📀 Love? (2011) / 🎙️ Jennifer Lopez, Pitbull / 🎼 RedOne / 📝 Nadir Khayat, Kinnda Hamid, AJ Junior, Teddy Sky, Bilal Hajji, Armando Perez, Gonzalo Hermosa, Ulises Hermosa / 🎥 TAJ Stansberry / 🏷️ Island Records" },
 { file: "Anaconda.m4a", details: "📀 The Pinkprint (2014) / 🎙️ Nicki Minaj / 🎼 Polow da Don, Da Internz / 📝 Nicki Minaj, Ernest Clark, Marcos Palacios, Anthony Ray, Sir Mix-a-Lot / 🎥 Colin Tilley" },
 { file: "Babys On Fire.m4a", details: "📀 TensIon (2012) / 🎙️ Die Antwoord / 🎼 DJ Hi-Tek / 📝 Watkin Tudor Jones, Anri du Toit / 🎥 Terence Neale" },
