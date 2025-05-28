@@ -1,8 +1,9 @@
-     // Configuration: Add/remove repos here easily
+      // Configuration: Add/remove repos here easily
 const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
     songs: [
+{ file: "Let s Go feat .m4a", details: "📀 Let's Go (HUGEL Remix) (Extended Mix) (2025) / 🎙️ Tom Enzy, Juany Bravo, Sami Brielle / 🎼 Jaden Bojsen, David Guetta / 📝 Not officially credited" },
 { file: "Chura Liya Emiway others mix.m4a", details: "📀 House of Pain (1992) / 🎙️ House of Pain / 🎼 DJ Muggs / 📝 Lawrence Muggerud, Erik Schrody / 🎥 David Perez Shadi / 🏷️ Tommy Boy Records" },
 { file: "Drop It Low- Kat Deluna.m4a", details: "📀 Inside Out (2011) / 🎙️ Kat DeLuna / 🎼 Andras Vleminckx / 📝 Kat DeLuna, Tyrone Edmond, Andras Vleminckx / 🏷️ Universal Motown" },
 { file: "FROM KHORASAN WITH LOVE.m4a", details: "📀 From Khorasan With Love (2025) / 🎙️ Qais Ulfat, Duran Etemadi, Aryana Sayeed, DYSTINCT, Vishal Mishra, Jacqueline F / 🎼 Produced by Umar Salman / 🎥 Fanaa TV" },
