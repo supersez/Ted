@@ -1,4 +1,4 @@
-      // Configuration: Add/remove repos here easily
+     // Configuration: Add/remove repos here easily
 const repositories = [
   {
     url: "https://github.com/atsuperman/R1/raw/refs/heads/main/",
@@ -29,8 +29,6 @@ const repositories = [
 { file: "Andreea D - Rompedon.mp3", details: "📀 Rompedon (2014) / 🎙️ Andreea D / 🎼 Silviu Păduraru, Victor Alstani / 📝 Emanuela Oancea, Mike Wells / 🎥 Alex Ceaușu / 🏷️ Roton Music" },
 { file: "Claydee feat Dame Dame.mp3", details: "📀 Dame Dame (2017) / 🎙️ Claydee, Lexy Panterra / 🎼 Claydee, Tim Aeby / 📝 Claydee, Andrea Sandoval, Sebastian Guerrero, Mauricio Alfredo Guerrero Jr., Sammy Plotkin, KAS Music / 🎥 Claydee / 🏷️ Down2Earth Music" },
 { file: "Eva Simons ft policeman.mp3", details: "📀 Policeman (2015) / 🎙️ Eva Simons, Konshens / 🎼 Sidney Samson / 📝 Eva Simons, Sidney Samson / 🎥 Rigel Kilston / 🏷️ Powerhouse" },
-{ file: "Thirumbi parra.mp3", details: "💿 Unknown (2010) / 🎙️ not available" },
-{ file: "Thoothukudi kothanar.mp3", details: "💿 Unknown (2025) /🎙️not available /  🎶 ne oru aruvi" },
 { file: "Gasolina.mp3", details: "📀 Barrio Fino (2004) / 🎙️ Daddy Yankee, Glory / 🎼 Luny Tunes / 📝 Daddy Yankee, Eddie Dee" },
 { file: "Impacto (Remix).mp3", details: "📀 El Cartel: The Big Boss (2007) / 🎙️ Daddy Yankee, Fergie / 🎼 Scott Storch, Tainy / 📝 Daddy Yankee, Fergie, William Adams" },
 { file: "Rakhi Rakhi.mp3", details: "🎬 Rakhi (2006) / 🎙️ Devi Sri Prasad, Mamta Mohandas / 🎼 Devi Sri Prasad / 📝 Sirivennela Seetharama Sastry / 🎥 Krishna Vamsi" },
@@ -100,4 +98,4 @@ export const allSongs = repositories.flatMap(repo =>
     ...song,
     path: `${repo.url}${song.file}`.replace(/ /g, '%20') // Encode spaces
   }))
-);
+); 
