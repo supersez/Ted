@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -486,79 +486,11 @@
 }
 
 
-    /* Add these styles to your existing CSS */
-#switch {
-    position: relative;
-    z-index: 2;
-    transition: transform 0.3s ease;
-}
-
-#switch:active {
-    transform: scale(0.9);
-}
-
-.links-container {
-    position: center;
-    top: 1px;
-    left: 0%;
-    width: 75%;
-    max-width: 500px;
-    background: rgba(51, 51, 51, 0.9);
-    border-radius: 10px;
-    padding: 15px;
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    z-index: 1;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    border: 1px solid #ff0000;
-}
-
-.link-item {
-    color: white;
-    cursor: pointer;
-    padding: 8px 15px;
-    border-radius: 5px;
-    background: rgba(25, 11, 00, 6);
-    transition: all 0.3s ease;
-    text-shadow: 0 0 10px #ffb0r0;
-    position: relative;
-    overflow: hidden;
-}
-
-.link-item:hover {
-    background: rgba(255, 0, 0, 0.2);
-    transform: translateX(10px);
-}
-
-.link-item::before {
-    content: '▶';
-    position: absolute;
-    left: -20px;
-    transition: left 0.3s ease;
-}
-
-.link-item:hover::before {
-    left: 5px;
-}
-
 .a-container {
     position: relative;
     transition: all 0.3s ease;
 }
 
-.a-container.expanded::after {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: rgba(255, 0, 0, 0.1);
-    border-radius: 15px;
-    z-index: -1;
-    animation: expand 0.5s ease;
-}
 
 @keyframes expand {
     from {
@@ -570,23 +502,7 @@
         opacity: 1;
     }
 }
-    
-    
-    // Add this animation to your CSS
-@keyframes linkClick {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-    }
-    50% {
-        transform: scale(0.95);
-        box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-    }
-}
+  
     
     .logo {
     font-family: 'Arial', sans-serif;
@@ -1045,60 +961,10 @@ body {
         font-size: 1.8rem;
     }
         
-    .links-container {
-        
-        position: relative;
-    margin: 10px 0;
-    top: auto;
-    left: auto;
-    transform: none;
-        
-        width: 75%;
-        max-width: none;
-        padding: 10px;
-        gap: 8px;
-        background: rgba(51, 51, 51, 0.9);
-    }
 
-    .link-item {
-        font-size: 14px;
-        padding: 10px 12px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .link-item:hover {
-        transform: none;
-    }
-
-    .link-item::before {
-        content: '';
-        display: none;
-    }
-
-    .link-item:hover::before {
-        left: -20px;
-    }
    .vertical-line {
         left: 5px; /* Adjust for small screens */
     }
-    
-  
-
-    /* Better touch targets */
-    .link-item {
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-    }
-
-    /* Mobile tap feedback */
-    .link-item:active {
-        background: rgba(255, 0, 0, 0.3);
-        transform: scale(0.98);
-    }
-
 
             .icon-row .icon {
                 font-size: 1.2rem;
@@ -1114,10 +980,6 @@ body {
     <div class="content-wrapper">
  <div class="logo-container" id="logoContainer">
     <h1 class="logo">SUPER</h1>
-</div>
-<div class="links-container" id="linksContainer">
-    <div class="link-item" data-url="https://atsuperman.github.io/isai/">இசை</div>
-
 </div>
   <div class="c-container" id="c-container" style="display: none;">
   <h4>search Results..</h4>
@@ -1150,12 +1012,6 @@ body {
            <span class="icon" id="list">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="#000000">
         <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"></path>
-    </svg>
-</span>
-       <span class="icon" id="switch">
-    <svg width="50" height="24" viewBox="0 0 50 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="50" height="24" rx="12" fill="#E0E0E0"/>
-        <circle id="toggle" cx="6" cy="12" r="6" fill="#000000"/>
     </svg>
 </span>
          <div id="searchBoxContainer">
@@ -1973,39 +1829,6 @@ listItem.onclick = () => {
 
         // Continuously generate notes
         setInterval(createNote, 15550);
-
-    
-// Add this to your existing JavaScript
-document.getElementById('switch').addEventListener('click', function() {
-    const linksContainer = document.getElementById('linksContainer');
-    const aContainer = document.querySelector('.a-container');
-    const toggle = document.getElementById('toggle');
-    
-    // Toggle links visibility
-    linksContainer.style.display = linksContainer.style.display === 'flex' ? 'none' : 'flex';
-    
-    // Toggle switch position and color
-    const isLeft = toggle.getAttribute('cx') === '6';
-    toggle.setAttribute('cx', isLeft ? '44' : '6');
-    toggle.setAttribute('fill', isLeft ? '#ff0000' : '#000000');
-    
-    // Add/remove expanded effect
-    aContainer.classList.toggle('expanded');
-});
-
-// Modify the existing link handler code
-document.querySelectorAll('.link-item').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault(); // Add this line
-        const url = this.dataset.url;
-        window.open(url, '_blank', 'noopener,noreferrer');
-        this.style.animation = 'linkClick 0.5s';
-        setTimeout(() => {
-            this.style.animation = '';
-        }, 500);
-    });
-});
-   
    
     
     // Flash message handling
