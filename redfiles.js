@@ -4,6 +4,10 @@ const repositories = [
   {
     url: "https://github.com/supersez/s/raw/refs/heads/main/",
     songs: [
+{ file: "50 50- Vannda Vanthan.m4a", details: "📀 50‑50 (feat Vanthan) (2025) / 🎙️ AHrD, Vanthan / 🎼 AHrD / 📝 AHrD" },
+{ file: "Pon Mi- Shenseea Dunw3ll.m4a", details: "📀 Pon Mi (2018) / 🎙️ Shenseea, Dunw3ll / 🎼 Dunw3ll / 📝 Chinsea Lee" },
+{ file: "Incendio Forestal sped Up.m4a", details: "📀 Incendio Forestal (Sped Up) (2024) / 🎙️ ZAHI & Ocean / 🎼 ZAHI / 📝 ZAHI" },
+{ file: "Havhavhav- Lvbel C5.m4a", details: "📀 Havhavhav (2025) / 🎙️ Lvbel C5 / 🎼 LVBEL C5, AKDO / 📝 Lvbel C5, AKDO" },
 { file: "Jumpin Jumpin- Atmox.m4a", details: "📀 Jumpin’ Jumpin (2024) / 🎙️ ATMOX / 🎼 Jang Jun / 📝 Jang Jun" }
     ]
   },
