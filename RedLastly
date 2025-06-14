@@ -4,6 +4,7 @@ const repositories = [
   {
     url: "https://github.com/supersez/s/raw/refs/heads/main/",
     songs: [
+{ file: "Havhavhav- Lvbel C5.m4a", details: "📀 Havhavhav (2025) / 🎙️ Lvbel C5 / 🎼 LVBEL C5, AKDO / 📝 Lvbel C5, AKDO" },
 { file: "Jumpin Jumpin- Atmox.m4a", details: "📀 Jumpin’ Jumpin (2024) / 🎙️ ATMOX / 🎼 Jang Jun / 📝 Jang Jun" }
     ]
   },
