@@ -4,6 +4,7 @@ const repositories = [
   {
     url: "https://github.com/supersez/s/raw/refs/heads/main/",
     songs: [
+{ file: "Fina Lana slowed.m4a", details: "📀 FINA LANA (Super Slowed) (2025) / 🎙️ 6YNTHMANE, LXGHTXNG / 🎼 6YNTHMANE, LXGHTXNG / 📝 6YNTHMANE, LXGHTXNG" },
 { file: "50 50- Vannda Vanthan.m4a", details: "📀 50‑50 (feat Vanthan) (2025) / 🎙️ AHrD, Vanthan / 🎼 AHrD / 📝 AHrD" },
 { file: "Pon Mi- Shenseea Dunw3ll.m4a", details: "📀 Pon Mi (2018) / 🎙️ Shenseea, Dunw3ll / 🎼 Dunw3ll / 📝 Chinsea Lee" },
 { file: "Incendio Forestal sped Up.m4a", details: "📀 Incendio Forestal (Sped Up) (2024) / 🎙️ ZAHI & Ocean / 🎼 ZAHI / 📝 ZAHI" },
