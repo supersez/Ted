@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>SUPER இசை</title>
+    <title>SUPER ONE</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
         body {
@@ -45,20 +45,20 @@
             background: linear-gradient(45deg, #ff0000, #ff6b6b);
             -webkit-background-clip: text;
             background-clip: text;
-            color: green;
+            color: NAVY;
             letter-spacing: -1.5px;
             position: relative;
             display: inline-block;
         }
 
         .card-logo .logo::after {
-            content: 'இசை';
+            content: 'ONE';
             font-family: 'Arial Unicode MS', 'Nirmala UI', sans-serif;
             font-size: 0.3em;
             background: linear-gradient(45deg, #333, #666);
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent;
+            color: Red;
             position: absolute;
             right: -0.2em;
             bottom: -0.8em;
@@ -75,7 +75,7 @@
         .song-pad {
             background: linear-gradient(105deg, #fefcf8 0%, #f8f2e8 100%);
             border: none;
-            border-left: 4px solid #0000B8;
+            border-left: 4px solid #F28500 ;
             border-radius: 0 24px 24px 0;
             padding: 18px 0 18px 24px;
             margin: 20px 0;
@@ -95,7 +95,7 @@
             font-size: 0.7rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color:#138808;
+            color:#F28500;
             font-weight: 600;
             margin-bottom: 8px;
             display: inline-block;
@@ -259,8 +259,8 @@
             .footer-link { font-size: 0.75rem; margin: 0 0.3rem; }
         }
     </style>
-<link rel="icon" type="image/png" href="https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png">
-<link rel="apple-touch-icon" href="https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png">
+<link rel="icon" type="image/png" href="https://github.com/supersez/Ted/raw/refs/heads/main/one.png">
+<link rel="apple-touch-icon" href="https://github.com/supersez/Ted/raw/refs/heads/main/one.png">
 
 </head>
 <body>
@@ -292,14 +292,14 @@
         atSUPERMAN
     </a>
     <span style="color:#aaa;">|</span>
-    <a href="#" class="footer-link" id="linkSuperOne">SUPER ONE</a>
+    <a href="#" class="footer-link" id="linkSuperOne">SUPER இசை</a>
     <span style="color:#aaa;">|</span>
     <a href="#" class="footer-link" id="linkTips">TIPS</a>
     <div id="tipsMessageContainer" style="min-height: 0;"></div>
 </div>
 
 <script type="module">
-    import { songs } from './isai.js';
+    import { songs } from './one.js';
 
     const songList = songs.map(song => ({
         title: song.file.replace(/\.(mp3|m4a|MP3|M4A)$/i, ''),
@@ -437,11 +437,11 @@
             artist: 'SUPER Isai',
             album: 'Global Sync Radio',
             artwork: [
-                { src: 'https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png', sizes: '96x96', type: 'image/png' },
-                { src: 'https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png', sizes: '128x128', type: 'image/png' },
-                { src: 'https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png', sizes: '192x192', type: 'image/png' },
-                { src: 'https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png', sizes: '256x256', type: 'image/png' },
-                { src: 'https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png', sizes: '512x512', type: 'image/png' }
+                { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '96x96', type: 'image/png' },
+                { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '128x128', type: 'image/png' },
+                { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '192x192', type: 'image/png' },
+                { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '256x256', type: 'image/png' },
+                { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '512x512', type: 'image/png' }
             ]
         });
         navigator.mediaSession.setActionHandler('play', () => {
