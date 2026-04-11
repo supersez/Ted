@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>SUPER ONE</title>
+    <title>SUPER இசை</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
         body {
@@ -45,20 +45,20 @@
             background: linear-gradient(45deg, #ff0000, #ff6b6b);
             -webkit-background-clip: text;
             background-clip: text;
-            color: NAVY;
+            color: green;
             letter-spacing: -1.5px;
             position: relative;
             display: inline-block;
         }
 
         .card-logo .logo::after {
-            content: 'ONE';
+            content: 'இசை';
             font-family: 'Arial Unicode MS', 'Nirmala UI', sans-serif;
-            font-size: 0.5em;
+            font-size: 0.3em;
             background: linear-gradient(45deg, #333, #666);
             -webkit-background-clip: text;
             background-clip: text;
-            color: Red;
+            color: transparent;
             position: absolute;
             right: -0.2em;
             bottom: -0.8em;
@@ -75,7 +75,7 @@
         .song-pad {
             background: linear-gradient(105deg, #fefcf8 0%, #f8f2e8 100%);
             border: none;
-            border-left: 4px solid #F28500 ;
+            border-left: 4px solid #0000B8;
             border-radius: 0 24px 24px 0;
             padding: 18px 0 18px 24px;
             margin: 20px 0;
@@ -95,7 +95,7 @@
             font-size: 0.7rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color:#F28500;
+            color:#138808;
             font-weight: 600;
             margin-bottom: 8px;
             display: inline-block;
@@ -259,8 +259,8 @@
             .footer-link { font-size: 0.75rem; margin: 0 0.3rem; }
         }
     </style>
-<link rel="icon" type="image/png" href="https://github.com/supersez/Ted/raw/refs/heads/main/one.png">
-<link rel="apple-touch-icon" href="https://github.com/supersez/Ted/raw/refs/heads/main/one.png">
+<link rel="icon" type="image/png" href="https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png">
+<link rel="apple-touch-icon" href="https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png">
 
 </head>
 <body>
@@ -292,14 +292,14 @@
         atSUPERMAN
     </a>
     <span style="color:#aaa;">|</span>
-    <a href="#" class="footer-link" id="linkSuperOne">SUPER இசை</a>
+    <a href="#" class="footer-link" id="linkSuperOne">SUPER ONE</a>
     <span style="color:#aaa;">|</span>
     <a href="#" class="footer-link" id="linkTips">TIPS</a>
     <div id="tipsMessageContainer" style="min-height: 0;"></div>
 </div>
 
 <script type="module">
-    import { songs } from './one.js';
+    import { songs } from './isai.js';
 
     const songList = songs.map(song => ({
         title: song.file.replace(/\.(mp3|m4a|MP3|M4A)$/i, ''),
@@ -418,19 +418,20 @@
     let isSwitching = false;
     let padRestoreTimer = null;
     let loadFallbackTimer = null;
+    let autoPreviewTimer = null;   // new: timer for automatic preview 20 sec before end
 
     function updateMediaSession(songTitle) {
         if ('mediaSession' in navigator) {
             navigator.mediaSession.metadata = new MediaMetadata({
                 title: songTitle,
-                artist: 'SUPER ONE',
-                album: 'GLOBAL',
+                artist: 'SUPER Isai',
+                album: 'Global Sync Radio',
                 artwork: [
-                    { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '96x96', type: 'image/png' },
-                    { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '128x128', type: 'image/png' },
-                    { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '192x192', type: 'image/png' },
-                    { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '256x256', type: 'image/png' },
-                    { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '512x512', type: 'image/png' }
+                    { src: 'https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png', sizes: '96x96', type: 'image/png' },
+                    { src: 'https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png', sizes: '128x128', type: 'image/png' },
+                    { src: 'https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png', sizes: '192x192', type: 'image/png' },
+                    { src: 'https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png', sizes: '256x256', type: 'image/png' },
+                    { src: 'https://github.com/atsuperman/isai/raw/refs/heads/main/isai.png', sizes: '512x512', type: 'image/png' }
                 ]
             });
             navigator.mediaSession.setActionHandler('play', () => {
@@ -481,9 +482,31 @@
         nextAudio.load();
     }
 
+    // New function to trigger the next preview (same as clicking the pad)
+    function triggerNextPreview() {
+        // Only trigger if not already showing NEXT and padRestoreTimer is not active? But we'll call showNextPreview directly
+        // showNextPreview will handle the logic of toggling and setting timer.
+        // But we must ensure we don't call it if already showing NEXT.
+        if (nowLabel.innerText !== "NEXT") {
+            showNextPreview();
+        }
+    }
+
     function scheduleNextSwitch(remainingMs) {
         if (switchTimeout) clearTimeout(switchTimeout);
+        if (autoPreviewTimer) clearTimeout(autoPreviewTimer);
         if (!isPlaying) return;
+
+        // Schedule auto preview 20 seconds before end (if song longer than 20 sec)
+        if (remainingMs > 20000) {
+            const previewDelay = remainingMs - 20000;
+            autoPreviewTimer = setTimeout(() => {
+                triggerNextPreview();
+                autoPreviewTimer = null;
+            }, previewDelay);
+        }
+
+        // Schedule the actual switch 300ms before end
         const switchTime = Math.max(remainingMs - 300, 50);
         switchTimeout = setTimeout(() => {
             loadNextSongFromGlobal();
@@ -494,6 +517,8 @@
         if (isSwitching || isLoading) return;
         isSwitching = true;
         if (loadFallbackTimer) clearTimeout(loadFallbackTimer);
+        if (autoPreviewTimer) clearTimeout(autoPreviewTimer);
+        autoPreviewTimer = null;
 
         const { songGlobalIndex, offsetInSongMs, remainingInSongMs, nextSongGlobalIndex } = getCurrentSong();
         const song = songList[songGlobalIndex];
@@ -548,6 +573,8 @@
     function onSongEnded() {
         if (!isPlaying) return;
         if (switchTimeout) clearTimeout(switchTimeout);
+        if (autoPreviewTimer) clearTimeout(autoPreviewTimer);
+        autoPreviewTimer = null;
         if (audio) {
             destroyAudio(audio);
             audio = null;
@@ -560,6 +587,8 @@
         if (isPlaying) {
             isPlaying = false;
             if (switchTimeout) clearTimeout(switchTimeout);
+            if (autoPreviewTimer) clearTimeout(autoPreviewTimer);
+            autoPreviewTimer = null;
             if (audio) audio.pause();
             updateButtonUI();
             if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
@@ -707,6 +736,8 @@
     document.addEventListener('visibilitychange', () => {
         if (!document.hidden && isPlaying) {
             if (switchTimeout) clearTimeout(switchTimeout);
+            if (autoPreviewTimer) clearTimeout(autoPreviewTimer);
+            autoPreviewTimer = null;
             loadAndPlayCurrentSong();
         }
     });
@@ -727,11 +758,13 @@
         if (isPlaying) {
             isPlaying = false;
             if (switchTimeout) clearTimeout(switchTimeout);
+            if (autoPreviewTimer) clearTimeout(autoPreviewTimer);
+            autoPreviewTimer = null;
             if (audio) audio.pause();
             updateButtonUI();
             if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
         }
-        window.location.href = 'https://atsuperman.github.io/isai/';
+        window.location.href = 'https://supersez.github.io/Ted/';
     });
     linkTips.addEventListener('click', (e) => {
         e.preventDefault();
