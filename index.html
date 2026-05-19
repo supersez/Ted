@@ -68,10 +68,11 @@
         }
 
         .now-playing {
-            text-align: left;
+            text-align: center;
             margin: 0 0 1rem 0;
         }
 
+        /* New centered layout */
         .song-pad {
             background: linear-gradient(105deg, #fefcf8 0%, #f8f2e8 100%);
             border: none;
@@ -80,13 +81,13 @@
             padding: 18px 0 18px 24px;
             margin: 20px 0;
             width: 100%;
-            text-align: left;
+            text-align: center;
             box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             transition: background 0.2s;
             display: flex;
-            gap: 1rem;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
         }
 
         .song-pad:active {
@@ -95,18 +96,18 @@
         }
 
         .album-cover {
-            width: 70px;
-            height: 70px;
-            border-radius: 12px;
+            width: 140px;
+            height: 140px;
+            border-radius: 16px;
             object-fit: cover;
             background: #ddd;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 1rem;
         }
 
         .song-info {
-            flex: 1;
-            min-width: 0;
+            width: 100%;
+            text-align: center;
         }
 
         .now-label {
@@ -123,17 +124,16 @@
         }
 
         .pad-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: #2c2418;
-            line-height: 1.25;
-            letter-spacing: -0.2px;
-            margin-bottom: 4px;
+            line-height: 1.3;
+            margin-bottom: 6px;
             word-break: break-word;
         }
 
         .pad-details {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: #6a5a48;
             line-height: 1.4;
             font-weight: 450;
@@ -145,8 +145,8 @@
         }
 
         @keyframes fadeSlide {
-            0% { opacity: 0; transform: translateX(6px); }
-            100% { opacity: 1; transform: translateX(0); }
+            0% { opacity: 0; transform: translateY(6px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes glitch {
@@ -266,9 +266,9 @@
         @media (max-width: 500px) {
             .radio-card { padding: 1.5rem; }
             .card-logo .logo { font-size: 1.1rem; }
-            .song-pad { padding: 12px 0 12px 16px; gap: 0.8rem; }
-            .album-cover { width: 55px; height: 55px; }
-            .pad-title { font-size: 1.1rem; }
+            .song-pad { padding: 18px 12px; }
+            .album-cover { width: 110px; height: 110px; }
+            .pad-title { font-size: 1.2rem; }
             .pad-details { font-size: 0.7rem; }
             .toggle-btn { font-size: 1.3rem; }
             .footer-link { font-size: 0.75rem; margin: 0 0.3rem; }
@@ -438,19 +438,41 @@
     let loadFallbackTimer = null;
     let autoPreviewTimer = null;
 
-    function updateMediaSession(songTitle) {
+    // Helper: get cover URL
+    function getCoverUrl(song) {
+        const baseFileName = song.title;
+        const encodedFileName = encodeURIComponent(baseFileName + '.jpg');
+        return song.baseUrl + encodedFileName;
+    }
+
+    // Update Media Session with current song's cover (dynamic)
+    async function updateMediaSession(songTitle, coverUrl) {
         if ('mediaSession' in navigator) {
-            navigator.mediaSession.metadata = new MediaMetadata({
-                title: songTitle,
-                artist: 'SUPER ONE',
-                album: 'GLOBAL',
-                artwork: [
+            let artwork = [];
+            if (coverUrl && !coverUrl.includes('0.jpg')) {
+                // Try to fetch the cover and use it as artwork
+                artwork = [
+                    { src: coverUrl, sizes: '96x96', type: 'image/jpeg' },
+                    { src: coverUrl, sizes: '128x128', type: 'image/jpeg' },
+                    { src: coverUrl, sizes: '192x192', type: 'image/jpeg' },
+                    { src: coverUrl, sizes: '256x256', type: 'image/jpeg' },
+                    { src: coverUrl, sizes: '512x512', type: 'image/jpeg' }
+                ];
+            } else {
+                // Fallback to the page logo
+                artwork = [
                     { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '96x96', type: 'image/png' },
                     { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '128x128', type: 'image/png' },
                     { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '192x192', type: 'image/png' },
                     { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '256x256', type: 'image/png' },
                     { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '512x512', type: 'image/png' }
-                ]
+                ];
+            }
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: songTitle,
+                artist: 'SUPER ONE',
+                album: 'GLOBAL',
+                artwork: artwork
             });
             navigator.mediaSession.setActionHandler('play', () => {
                 if (!isPlaying && !isLoading) togglePlayPause();
@@ -466,12 +488,6 @@
         }
     }
 
-    function getCoverUrl(song) {
-        const baseFileName = song.title;
-        const encodedFileName = encodeURIComponent(baseFileName + '.jpg');
-        return song.baseUrl + encodedFileName;
-    }
-
     function updateUI(songIdx, nextIdx) {
         const song = songList[songIdx];
         padSongTitle.innerText = song.title;
@@ -482,14 +498,16 @@
         padSongDetails.classList.add('song-details');
         songPad.classList.add('glitch');
         setTimeout(() => songPad.classList.remove('glitch'), 600);
-        updateMediaSession(song.title);
 
-        // Update album cover – same method as SUPER Isai
+        // Update album cover
         const coverUrl = getCoverUrl(song);
         albumCoverImg.src = coverUrl;
         albumCoverImg.onerror = () => {
             albumCoverImg.src = 'https://github.com/atsuperman/play2/raw/main/0.jpg';
         };
+
+        // Update Media Session with the same cover
+        updateMediaSession(song.title, coverUrl);
     }
 
     function destroyAudio(audioObj) {
@@ -733,13 +751,13 @@
         const isShowingNext = (nowLabel.innerText === "NEXT");
 
         if (isShowingNext) {
+            // Restore current song
             nowLabel.innerText = "NOW PLAYING";
             padSongTitle.innerText = currentSong.title;
             padSongDetails.innerText = currentSong.details || "";
             padSongDetails.classList.remove('song-details');
             void padSongDetails.offsetWidth;
             padSongDetails.classList.add('song-details');
-            // Restore cover
             const coverUrl = getCoverUrl(currentSong);
             albumCoverImg.src = coverUrl;
             albumCoverImg.onerror = () => {
@@ -748,12 +766,18 @@
             return;
         }
 
+        // Show next song preview
         nowLabel.innerText = "NEXT";
         padSongTitle.innerText = nextSong.title;
         padSongDetails.innerText = nextSong.details || "";
         padSongDetails.classList.remove('song-details');
         void padSongDetails.offsetWidth;
         padSongDetails.classList.add('song-details');
+        const nextCoverUrl = getCoverUrl(nextSong);
+        albumCoverImg.src = nextCoverUrl;
+        albumCoverImg.onerror = () => {
+            albumCoverImg.src = 'https://github.com/atsuperman/play2/raw/main/0.jpg';
+        };
 
         padRestoreTimer = setTimeout(() => {
             const fresh = getCurrentSong();
