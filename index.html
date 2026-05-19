@@ -72,7 +72,6 @@
             margin: 0 0 1rem 0;
         }
 
-        /* New centered layout */
         .song-pad {
             background: linear-gradient(105deg, #fefcf8 0%, #f8f2e8 100%);
             border: none;
@@ -438,41 +437,37 @@
     let loadFallbackTimer = null;
     let autoPreviewTimer = null;
 
-    // Helper: get cover URL
+    const DEFAULT_COVER_URL = 'https://github.com/atsuperman/play2/raw/main/0.jpg';
+
     function getCoverUrl(song) {
         const baseFileName = song.title;
         const encodedFileName = encodeURIComponent(baseFileName + '.jpg');
         return song.baseUrl + encodedFileName;
     }
 
-    // Update Media Session with current song's cover (dynamic)
-    async function updateMediaSession(songTitle, coverUrl) {
+    // Media Session: only use song cover (or default 0.jpg) – never the page logo
+    function updateMediaSession(songTitle, coverUrl) {
         if ('mediaSession' in navigator) {
-            let artwork = [];
-            if (coverUrl && !coverUrl.includes('0.jpg')) {
-                // Try to fetch the cover and use it as artwork
-                artwork = [
-                    { src: coverUrl, sizes: '96x96', type: 'image/jpeg' },
-                    { src: coverUrl, sizes: '128x128', type: 'image/jpeg' },
-                    { src: coverUrl, sizes: '192x192', type: 'image/jpeg' },
-                    { src: coverUrl, sizes: '256x256', type: 'image/jpeg' },
-                    { src: coverUrl, sizes: '512x512', type: 'image/jpeg' }
-                ];
-            } else {
-                // Fallback to the page logo
-                artwork = [
-                    { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '96x96', type: 'image/png' },
-                    { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '128x128', type: 'image/png' },
-                    { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '192x192', type: 'image/png' },
-                    { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '256x256', type: 'image/png' },
-                    { src: 'https://github.com/supersez/Ted/raw/refs/heads/main/one.png', sizes: '512x512', type: 'image/png' }
-                ];
+            const artworks = [];
+            if (coverUrl) {
+                artworks.push({ src: coverUrl, sizes: '96x96', type: 'image/jpeg' });
+                artworks.push({ src: coverUrl, sizes: '128x128', type: 'image/jpeg' });
+                artworks.push({ src: coverUrl, sizes: '192x192', type: 'image/jpeg' });
+                artworks.push({ src: coverUrl, sizes: '256x256', type: 'image/jpeg' });
+                artworks.push({ src: coverUrl, sizes: '512x512', type: 'image/jpeg' });
             }
+            // fallback to default 0.jpg (same as UI)
+            artworks.push({ src: DEFAULT_COVER_URL, sizes: '96x96', type: 'image/jpeg' });
+            artworks.push({ src: DEFAULT_COVER_URL, sizes: '128x128', type: 'image/jpeg' });
+            artworks.push({ src: DEFAULT_COVER_URL, sizes: '192x192', type: 'image/jpeg' });
+            artworks.push({ src: DEFAULT_COVER_URL, sizes: '256x256', type: 'image/jpeg' });
+            artworks.push({ src: DEFAULT_COVER_URL, sizes: '512x512', type: 'image/jpeg' });
+
             navigator.mediaSession.metadata = new MediaMetadata({
                 title: songTitle,
                 artist: 'SUPER ONE',
                 album: 'GLOBAL',
-                artwork: artwork
+                artwork: artworks
             });
             navigator.mediaSession.setActionHandler('play', () => {
                 if (!isPlaying && !isLoading) togglePlayPause();
@@ -499,14 +494,12 @@
         songPad.classList.add('glitch');
         setTimeout(() => songPad.classList.remove('glitch'), 600);
 
-        // Update album cover
         const coverUrl = getCoverUrl(song);
         albumCoverImg.src = coverUrl;
         albumCoverImg.onerror = () => {
-            albumCoverImg.src = 'https://github.com/atsuperman/play2/raw/main/0.jpg';
+            albumCoverImg.src = DEFAULT_COVER_URL;
         };
 
-        // Update Media Session with the same cover
         updateMediaSession(song.title, coverUrl);
     }
 
@@ -761,7 +754,7 @@
             const coverUrl = getCoverUrl(currentSong);
             albumCoverImg.src = coverUrl;
             albumCoverImg.onerror = () => {
-                albumCoverImg.src = 'https://github.com/atsuperman/play2/raw/main/0.jpg';
+                albumCoverImg.src = DEFAULT_COVER_URL;
             };
             return;
         }
@@ -776,7 +769,7 @@
         const nextCoverUrl = getCoverUrl(nextSong);
         albumCoverImg.src = nextCoverUrl;
         albumCoverImg.onerror = () => {
-            albumCoverImg.src = 'https://github.com/atsuperman/play2/raw/main/0.jpg';
+            albumCoverImg.src = DEFAULT_COVER_URL;
         };
 
         padRestoreTimer = setTimeout(() => {
@@ -791,7 +784,7 @@
             const coverUrl = getCoverUrl(freshSong);
             albumCoverImg.src = coverUrl;
             albumCoverImg.onerror = () => {
-                albumCoverImg.src = 'https://github.com/atsuperman/play2/raw/main/0.jpg';
+                albumCoverImg.src = DEFAULT_COVER_URL;
             };
             padRestoreTimer = null;
         }, 5000);
